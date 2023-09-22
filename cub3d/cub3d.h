@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/08/25 14:16:18 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/08/28 16:05:30 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@
 # define D 2
 # define LEFT 123
 # define RIGHT 124
-# define LARGEUR 1920
-# define HAUTEUR 1080
+# define LARGEUR 1080
+# define HAUTEUR 720
 # define MAPL 24
 # define MAPH 24
+# define PI 3.1415926535
 
 
 enum {
@@ -76,6 +77,8 @@ typedef struct s_data {
 	int		color;
 	int		drawstart;
 	int		drawend;
+	int		largeur; // LARGEUR
+	int		x; // pixelsx
 	int		w; //avancer
 	int		s; //reculer
 	int		a; //aller a gauche
@@ -118,7 +121,11 @@ int	moovead(t_data *s);
 int	moovews(t_data *s);
 
 void	my_mlx_pixel_put(t_data *img, int x, int y, int color);
-void	init_position(t_data *s);
+void	init_raycast(t_data *s);
 void	cub(t_data *s);
 void	initcub(t_data *s);
+void	init_directions(t_data *s);
+void	dda_and_height(t_data *s);
+void	draw_walls(t_data *s);
+
 #endif
