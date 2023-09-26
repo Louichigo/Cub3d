@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/09/26 13:02:56 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:42:46 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct s_data {
 	void	*mlx_win;
 	void	*img;
 	void	*addr;
+	int		*addr2;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
