@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moove.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 13:52:50 by lobertho          #+#    #+#             */
-/*   Updated: 2023/08/28 15:18:19 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/09/26 12:04:45 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,19 @@ int	moovews(t_data *s)
 
 int	moovead(t_data *s)
 {
+	if (s->d == 1)
+	{
+		if (g_worldmap[(int)(s->posX + s->planeX * s->movespeed)][(int)(s->posY)] == 0)
+			s->posX += s->planeX * s->movespeed;
+		if (g_worldmap[(int)(s->posX)][(int)(s->posY + s->planeY * s->movespeed)] == 0)
+			s->posY += s->planeY * s->movespeed;
+	}
 	if (s->a == 1)
 	{
-		/*if (g_worldmap[(int)(s->posX + cos(s->rotspeed - PI / 2) / s->movespeed)][(int)(s->posY)] == 0)
-		s->posX += cos(s->rotspeed - PI / 2) / s->movespeed;
-		if (g_worldmap[(int)(s->posX)][(int)(s->posY + sin(s->rotspeed - PI / 2) / s->movespeed)] == 0)
-		s->posY += sin(s->rotspeed - PI / 2) / s->movespeed;*/
+		if (g_worldmap[(int)(s->posX - s->planeX * s->movespeed)][(int)(s->posY)] == 0)
+			s->posX -= s->planeX * s->movespeed;
+		if (g_worldmap[(int)(s->posX)][(int)(s->posY - s->planeY * s->movespeed)] == 0)
+			s->posY -= s->planeY * s->movespeed;	
 	}
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/08/28 16:05:30 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:02:56 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # define RIGHT 124
 # define LARGEUR 1080
 # define HAUTEUR 720
+# define texWidth 64
+# define texHeight 64
 # define MAPL 24
 # define MAPH 24
 # define PI 3.1415926535
@@ -92,6 +94,13 @@ typedef struct s_data {
 	int		mapY; //position du ray dans le square de la map en Y
 	int		stepX; //direction ou aller en X
 	int		stepY; //direction ou aller en Y
+	int		texNum; //position du current square
+	int		texnb; // numero de la texture
+	double	step; // calcul augmentation coordonnee texture par pixel
+	double	texpos; // coordonnees texure
+	double	wallX; //position exact ou le mur est toucher
+	double	texX; // position en X de la texture
+	double	texY; // pos en Y texture
 	double	posX; //position du joueur en X
 	double	posY; //position du joueur en Y
 	double	dirX; //direction du joueur en X
