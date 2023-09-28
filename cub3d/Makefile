@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+         #
+#    By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 14:23:07 by lobertho          #+#    #+#              #
-#    Updated: 2023/08/28 16:06:00 by lobertho         ###   ########.fr        #
+#    Updated: 2023/09/28 12:28:36 by lobertho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,17 @@ CC = gcc -Wall -Wextra -Werror
 
 FLAGS = -framework OpenGL -framework AppKit
 
+MLX = ./mlx/libmlx.a
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		$(CC) -I./mlx -Lmlx -lmlx $(FLAGS) -o $(NAME) $(OBJS)
+
+		make -C mlx
+		$(CC) -I./mlx -Lmlx -lmlx $(FLAGS) $(MLX) -o $(NAME) $(OBJS)
 	
 clean:
+		make clean -C mlx
 		rm -f $(OBJS)
 
 fclean: clean
