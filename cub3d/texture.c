@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:33:17 by lobertho          #+#    #+#             */
-/*   Updated: 2023/09/26 16:47:38 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:10:05 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	textures(t_data *s, int x)
 		s->texpos += s->step;
 		if (y < HAUTEUR && x < LARGEUR)
 		{
-			
+				
 		}
 	}
 }

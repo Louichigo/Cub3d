@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/09/26 16:42:46 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:10:59 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,11 @@ typedef struct s_data {
 	int		stepY; //direction ou aller en Y
 	int		texNum; //position du current square
 	int		texnb; // numero de la texture
-	double	step; // calcul augmentation coordonnee texture par pixel
-	double	texpos; // coordonnees texure
-	double	wallX; //position exact ou le mur est toucher
-	double	texX; // position en X de la texture
-	double	texY; // pos en Y texture
+	double	step; // indique de combien augmenter les coordonnées de la texture pour chaque pixel
+	double	texpos; // coordonnees de depart de la texure
+	double	wallX; //valeur où le mur a été touché : coordonnée y si side == 0, coordonnée x si side == 1
+	double	texX; // coordonnee en X de la texture
+	double	texY; // coordonnee en Y texture
 	double	posX; //position du joueur en X
 	double	posY; //position du joueur en Y
 	double	dirX; //direction du joueur en X

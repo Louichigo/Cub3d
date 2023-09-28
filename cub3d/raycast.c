@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:55:27 by lobertho          #+#    #+#             */
-/*   Updated: 2023/09/28 12:25:27 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/09/28 15:19:21 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	init_directions(t_data *s)
 
 void	dda_and_height(t_data *s)
 {
-	while (s->hit == 0)  //DDA : calcul du hit des rays en boucle
+	while (s->hit == 0)
 	{
 		if (s->sideDistX < s->sideDistY)
 		{
@@ -64,14 +64,14 @@ void	dda_and_height(t_data *s)
 			s->mapY += s->stepY;
 			s->hitside = 1;
 		}
-		if (g_worldmap[s->mapX][s->mapY] > 0) //check si un ray a toucher un mur
+		if (g_worldmap[s->mapX][s->mapY] > 0)
 			s->hit = 1;
 	}
-	if (s->hitside == 0) //calcul distance ray-mur
+	if (s->hitside == 0)
 		s->WallDist = fabs((s->mapX - s->posX + (1 - s->stepX) / 2) / s->raydirX);
 	else
 		s->WallDist = fabs((s->mapY - s->posY + (1 - s->stepY) / 2) / s->raydirY);
-	s->lineHeight = (int)(s->h / s->WallDist); //calcul hauteur du mur a dessiner
+	s->lineHeight = (int)(s->h / s->WallDist);
 }
 
 void	draw_walls(t_data *s)
@@ -79,17 +79,17 @@ void	draw_walls(t_data *s)
 	int	d;
 
 	d = 0;
-	s->drawstart = -s->lineHeight / 2 + s->h / 2; //calcul ou dessiner les murs
+	s->drawstart = -s->lineHeight / 2 + s->h / 2;
 	if (s->drawstart < 0)
 		s->drawstart = 0;
 	s->drawend = s->lineHeight / 2 + s->h / 2;
 	if (s->drawend >= s->h)
 		s->drawend = s->h;
-	while (d < s->drawstart) //dessiner le plafond
+	while (d < s->drawstart)
 		my_mlx_pixel_put(s, s->x, d++, 0x000000FF);
-	while (s->drawstart < s->drawend) //dessiner les murs
+	while (s->drawstart < s->drawend)
 		my_mlx_pixel_put(s, s->x, s->drawstart++, s->color);
-	d = s->drawend; //dessiner le sol
+	d = s->drawend;
 	while (d > 0 && d < HAUTEUR)
 		my_mlx_pixel_put(s, s->x, d++, 0x0000FF00);
 }
