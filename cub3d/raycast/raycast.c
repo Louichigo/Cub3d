@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:55:27 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/17 16:01:14 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:14:41 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	init_raycast(t_cub *cub)
 {
@@ -92,8 +92,8 @@ void	draw_walls(t_cub *cub)
 	if (cub->s.drawend >= cub->s.h)
 		cub->s.drawend = cub->s.h;
 	while (d < cub->s.drawstart)
-		my_mlx_pixel_put(cub, cub->s.x, d++, 0x000000FF);
+		my_mlx_pixel_put(cub, cub->s.x, d++, cub->s.roof_color);
 	d = cub->s.drawend;
 	while (d > 0 && d < HAUTEUR)
-		my_mlx_pixel_put(cub, cub->s.x, d++, 0x0000FF00);
+		my_mlx_pixel_put(cub, cub->s.x, d++, cub->s.floor_color);
 }

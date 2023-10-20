@@ -6,20 +6,21 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:43:30 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 11:32:18 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:14:27 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	initcub(t_cub *cub)
 {
 	cub->s.h = HAUTEUR;
 	cub->s.largeur = LARGEUR;
-	cub->s.color = 0x00FF0000;
-	cub->s.posx = 22;
+	cub->s.floor_color = 0x0000FF00;
+	cub->s.roof_color = 0x000000FF;
+	cub->s.posx = 22; //posx posy en fonction de la position dans la map
 	cub->s.posy = 12;
-	cub->s.dirx = -1;
+	cub->s.dirx = -1; //dirx diry en fonciont de l'orientation dans la map N O W E
 	cub->s.diry = 0;
 	cub->s.planex = 0;
 	cub->s.planey = 0.66;
