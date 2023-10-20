@@ -6,13 +6,13 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:03:12 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 14:35:18 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:08:23 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-/*void	parsing(t_cub *cub, char **copy)
+void	parsing(t_cub *cub, char **copy)
 {
 	cub->s.roof_color = string_to_rgb(copy, 'C');
 	cub->s.floor_color = string_to_rgb(copy, 'F');
@@ -31,4 +31,4 @@
 		free(cub->s.ea_wall);
 		free(cub->s.we_wall);
 	}
-}*/
+}

@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:03:03 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 14:24:18 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:20:39 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 		return (-1);
 	copy = copy_fd(argc, argv);
 	img->s.mlx = mlx_init();
-	//parsing(img, copy);
+	parsing(img, copy);
 	initcub(img);
 	get_text(img);
 	img->s.mlx_win = mlx_new_window(img->s.mlx, LARGEUR, HAUTEUR, "cub3d");

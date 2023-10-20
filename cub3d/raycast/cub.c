@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:43:30 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 14:22:18 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:07:47 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	initcub(t_cub *cub)
 {
 	cub->s.h = HAUTEUR;
 	cub->s.largeur = LARGEUR;
-	cub->s.floor_color = 0x0000FF00;
-	cub->s.roof_color = 0x000000FF;
+	/*cub->s.floor_color = 0x0000FF00;
+	cub->s.roof_color = 0x000000FF;*/
 	cub->s.posx = 22;
 	cub->s.posy = 12;
 	cub->s.dirx = -1;
@@ -32,10 +32,6 @@ void	initcub(t_cub *cub)
 	cub->s.s = 0;
 	cub->s.l = 0;
 	cub->s.r = 0;
-	cub->s.no_wall = "./textures/NO.xpm";
-	cub->s.so_wall = "./textures/SO.xpm";
-	cub->s.we_wall = "./textures/WE.xpm";
-	cub->s.ea_wall = "./textures/EA.xpm";
 }
 
 int	ft_refresh(t_cub *cub)

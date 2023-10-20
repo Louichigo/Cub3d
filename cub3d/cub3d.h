@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 13:55:23 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:17:15 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,16 @@ size_t	ft_strlen(const char *s);
 char	**copy_fd(int argc, char **argv);
 char	*gnl_custom(int fd);
 int		ft_strcmp(char *s1, char *s2);
-
+char	*textures_path(char **copy, char *flag);
+bool	valid_texture(char *path);
+bool	is_space(char c);
+void	parsing(t_cub *cub, char **copy);
+int		ft_atoi(const char *str);
+bool	is_digit(char c);
+bool	is_rgb(int rgb);
+int		space_counter(char *str);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	**ft_split(char const *s, char c);
+unsigned int	string_to_rgb(char **copy, char flag);
 
 #endif
