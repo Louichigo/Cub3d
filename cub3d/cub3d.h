@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/17 16:18:05 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:25:22 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 # define D 2
 # define LEFT 123
 # define RIGHT 124
-# define LARGEUR 1080
-# define HAUTEUR 720
+# define LARGEUR 1920
+# define HAUTEUR 1080
 # define texWidth 64
 # define texHeight 64
 # define MAPL 24

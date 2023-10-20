@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+         #
+#    By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 14:23:07 by lobertho          #+#    #+#              #
-#    Updated: 2023/10/11 16:54:48 by lobertho         ###   ########.fr        #
+#    Updated: 2023/10/20 11:46:08 by lobertho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3d
 
-SRCS = main.c controls.c utils.c cub.c moove.c raycast.c texture.c
+SRCS = $(wildcard *.c)	\
+	   $(wildcard raycast/*.c)
 
 OBJS = $(SRCS:.c=.o)
 
