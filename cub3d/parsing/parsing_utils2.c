@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:11:38 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 16:13:56 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/21 19:29:58 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	is_rgb(int rgb)
 	return (false);
 }
 
-int		space_counter(char *str)
+int	space_counter(char *str)
 {
 	int	i;
 	int	count;
@@ -61,4 +61,56 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	str[j] = '\0';
 	return (str);
+}
+
+char	*ft_strdup(char *s1, int max_len)
+{
+	int		i;
+	int		len;
+	char	*dup;
+
+	len = ft_strlen(s1);
+	dup = malloc(sizeof(char) * max_len);
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (i < max_len)
+	{
+		while (i < len && s1[i] != '\n' && s1[i])
+		{
+			if (s1[i] == ' ')
+				dup[i] = '0';
+			else
+				dup[i] = s1[i];
+			i++;
+		}
+		dup[i] = '0';
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
+void	init_dir(t_cub *cub, char c)
+{
+	if (c == 'N')
+	{
+		cub->s.dirx = -1;
+		cub->s.diry = 0;
+	}
+	else if (c == 'S')
+	{
+		cub->s.dirx = 1;
+		cub->s.diry = 0;
+	}
+	else if (c == 'E')
+	{
+		cub->s.dirx = 0;
+		cub->s.diry = -1;
+	}
+	else if (c == 'W')
+	{
+		cub->s.dirx = 0;
+		cub->s.diry = 1;
+	}
 }

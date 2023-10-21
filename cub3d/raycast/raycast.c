@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:55:27 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 12:14:41 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/21 20:04:00 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	dda_and_height(t_cub *cub)
 			cub->s.mapy += cub->s.stepy;
 			cub->s.hitside = 1;
 		}
-		if (g_worldmap[cub->s.mapx][cub->s.mapy] > 0)
+		if (cub->s.map[cub->s.mapx][cub->s.mapy] > 0)
 			cub->s.hit = 1;
 	}
 	if (cub->s.hitside == 0)
@@ -77,7 +77,7 @@ void	dda_and_height(t_cub *cub)
 	else
 		cub->s.walldist = fabs((cub->s.mapy - cub->s.posy
 					+ (1 - cub->s.stepy) / 2) / cub->s.raydiry);
-	cub->s.lineHeight = (int)(cub->s.h / cub->s.walldist);
+	cub->s.lineheight = (int)(cub->s.h / cub->s.walldist);
 }
 
 void	draw_walls(t_cub *cub)
@@ -85,10 +85,10 @@ void	draw_walls(t_cub *cub)
 	int	d;
 
 	d = 0;
-	cub->s.drawstart = -cub->s.lineHeight / 2 + cub->s.h / 2;
+	cub->s.drawstart = -cub->s.lineheight / 2 + cub->s.h / 2;
 	if (cub->s.drawstart < 0)
 		cub->s.drawstart = 0;
-	cub->s.drawend = cub->s.lineHeight / 2 + cub->s.h / 2;
+	cub->s.drawend = cub->s.lineheight / 2 + cub->s.h / 2;
 	if (cub->s.drawend >= cub->s.h)
 		cub->s.drawend = cub->s.h;
 	while (d < cub->s.drawstart)

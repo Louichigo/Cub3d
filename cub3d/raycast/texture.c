@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:33:17 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 13:31:52 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/21 20:05:23 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,20 +65,20 @@ void	find_texture(t_cub *cub)
 
 void	init_textures(t_cub *cub)
 {
-	cub->s.texnum = g_worldmap[cub->s.mapx][cub->s.mapy] - 1;
+	cub->s.texnum = cub->s.map[cub->s.mapx][cub->s.mapy] - 1;
 	if (cub->s.hitside == 0)
 		cub->s.wallx = cub->s.posy + cub->s.walldist * cub->s.raydiry;
 	else
 		cub->s.wallx = cub->s.posx + cub->s.walldist * cub->s.raydirx;
 	cub->s.wallx -= floor((cub->s.wallx));
-	cub->s.texx = (int)(cub->s.wallx * (double)texWidth);
+	cub->s.texx = (int)(cub->s.wallx * (double)TEXWIDTH);
 	if (cub->s.hitside == 0 && cub->s.raydirx > 0)
-		cub->s.texx = texWidth - cub->s.texx - 1;
+		cub->s.texx = TEXWIDTH - cub->s.texx - 1;
 	if (cub->s.hitside == 1 && cub->s.raydiry < 0)
-		cub->s.texx = texWidth - cub->s.texx - 1;
-	cub->s.step = 1.0 * texHeight / cub->s.lineHeight;
+		cub->s.texx = TEXWIDTH - cub->s.texx - 1;
+	cub->s.step = 1.0 * TEXHEIGHT / cub->s.lineheight;
 	cub->s.texpos = (cub->s.drawstart - cub->s.h / 2
-			+ cub->s.lineHeight / 2) * cub->s.step;
+			+ cub->s.lineheight / 2) * cub->s.step;
 }
 
 void	textures(t_cub *cub, int x)
@@ -91,7 +91,7 @@ void	textures(t_cub *cub, int x)
 	init_textures(cub);
 	while (++y <= cub->s.drawend)
 	{
-		cub->s.texy = (int)cub->s.texpos & (texHeight - 1);
+		cub->s.texy = (int)cub->s.texpos & (TEXHEIGHT - 1);
 		cub->s.texpos += cub->s.step;
 		lol = cub->s.texy * cub->tex.txt[cub->s.texnb].line_length
 			/ 4 + cub->s.texx;
