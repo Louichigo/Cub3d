@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:03:03 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 18:17:12 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:44:00 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int	main(int argc, char **argv)
 	mlx_hook(img->s.mlx_win, ON_DESTROY, 0, ft_exit, img);
 	mlx_loop_hook(img->s.mlx, ft_refresh, img);
 	mlx_loop(img->s.mlx);
+	//free_mapint(&img->s, img->s.map);
 }

@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 19:37:35 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/23 22:24:08 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,8 @@ int				map_first_line(char **copy);
 int				largeur_map(char **copy);
 char			*ft_strdup(char *s1, int max_len);
 void			init_dir(t_cub *cub, char c);
+void			free_chartab(char **tab);
+void			free_mapint(t_data *s, int **map);
+int				tab_size(char **tab);
 
 #endif

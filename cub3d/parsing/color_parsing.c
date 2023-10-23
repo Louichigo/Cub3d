@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:08:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 19:30:55 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/23 20:19:10 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,21 +112,28 @@ char	*color_strings(char **copy, char c)
 
 unsigned int	string_to_rgb(char **copy, char flag)
 {
+	char			*color_string;
 	char			*cleanstring;
 	char			**color;
 	int				rgb[3];
 	unsigned int	hexa_rgb;
 	int				i;
 
-	cleanstring = space_remover(color_strings(copy, flag));
+	color_string = color_strings(copy, flag);
+	cleanstring = space_remover(color_string);
+	free(color_string);
 	if (!virgule_check(cleanstring))
 		ft_error("rgb error in map");
 	color = ft_split(cleanstring, ',');
+	free(cleanstring);
 	if (!valid_value(color))
 		ft_error("rgb error in map");
 	i = -1;
 	while (color[++i])
+	{
 		rgb[i] = ft_atoi(color[i]);
+		free(color[i]);
+	}
 	hexa_rgb = 0;
 	hexa_rgb = (rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
 	return (hexa_rgb);

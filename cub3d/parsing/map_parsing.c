@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 19:33:07 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/23 22:35:48 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ char	**map_copy(char **copy)
 		return (NULL);
 	h = -1;
 	while (++h < hauteur)
-		map[h] = ft_strdup(copy[start + h], largeur + 1);
+	{
+		map[h] = ft_strdup(copy[start + h], largeur);
+		printf("[%p]\n", map[h]);
+	}
 	map[h] = NULL;
 	return (map);
 }
@@ -61,6 +64,7 @@ int	**map_init(t_cub *cub, char **map_c)
 				cub->s.posy = (l + 0.5);
 			}
 		}
+		free(map_c[h]);
 	}
 	return (map);
 }
