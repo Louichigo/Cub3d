@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/23 22:35:48 by cgross           ###   ########.fr       */
+/*   Updated: 2023/10/24 18:57:13 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**map_copy(char **copy)
 		map[h] = ft_strdup(copy[start + h], largeur);
 		printf("[%p]\n", map[h]);
 	}
-	map[h] = NULL;
+//	map[h] = NULL; creates disaster 1 out of 10times
 	return (map);
 }
 
