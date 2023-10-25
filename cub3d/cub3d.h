@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/23 22:24:08 by cgross           ###   ########.fr       */
+/*   Updated: 2023/10/25 12:48:25 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 # define D 2
 # define LEFT 123
 # define RIGHT 124
-# define LARGEUR 1080
-# define HAUTEUR 720
+# define LARGEUR 1920
+# define HAUTEUR 1080
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define PI 3.1415926535

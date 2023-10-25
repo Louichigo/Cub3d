@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:11:38 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 19:29:58 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:13:58 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,20 +97,24 @@ void	init_dir(t_cub *cub, char c)
 	{
 		cub->s.dirx = -1;
 		cub->s.diry = 0;
+		cub->s.planey = 0.66;
 	}
 	else if (c == 'S')
 	{
 		cub->s.dirx = 1;
 		cub->s.diry = 0;
+		cub->s.planey = -0.66;
 	}
 	else if (c == 'E')
 	{
 		cub->s.dirx = 0;
-		cub->s.diry = -1;
+		cub->s.diry = 1;
+		cub->s.planex = 0.66;
 	}
 	else if (c == 'W')
 	{
 		cub->s.dirx = 0;
-		cub->s.diry = 1;
+		cub->s.diry = -1;
+		cub->s.planex = -0.66;
 	}
 }

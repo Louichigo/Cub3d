@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:03:12 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/23 22:38:16 by cgross           ###   ########.fr       */
+/*   Updated: 2023/10/25 13:08:29 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	parsing(t_cub *cub, char **copy)
 {
 	char	**mapl;
 
+	cub->s.planex = 0;
+	cub->s.planey = 0;
 	cub->s.roof_color = string_to_rgb(copy, 'C');
 	cub->s.floor_color = string_to_rgb(copy, 'F');
 	cub->s.no_wall = textures_path(copy, "NO");

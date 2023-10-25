@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:43:30 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 19:25:55 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:07:39 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@ void	initcub(t_cub *cub)
 {
 	cub->s.h = HAUTEUR;
 	cub->s.largeur = LARGEUR;
-	cub->s.dirx = -1;
-	cub->s.diry = 0;
-	cub->s.planex = 0;
-	cub->s.planey = 0.66;
 	cub->s.movespeed = 0.15;
 	cub->s.rotspeed = 0.04;
 	cub->s.a = 0;

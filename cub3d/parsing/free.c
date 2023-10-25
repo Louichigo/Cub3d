@@ -6,11 +6,11 @@
 /*   By: cgross <cgross@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 19:31:46 by cgross            #+#    #+#             */
-/*   Updated: 2023/10/23 22:23:36 by cgross           ###   ########.fr       */
+/*   Updated: 2023/10/25 12:47:37 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int		tab_size(char **tab)
 {

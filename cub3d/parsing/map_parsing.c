@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/24 18:57:13 by cgross           ###   ########.fr       */
+/*   Updated: 2023/10/25 13:15:11 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char	**map_copy(char **copy)
 		map[h] = ft_strdup(copy[start + h], largeur);
 		printf("[%p]\n", map[h]);
 	}
-//	map[h] = NULL; creates disaster 1 out of 10times
 	return (map);
 }
 
@@ -59,7 +58,7 @@ int	**map_init(t_cub *cub, char **map_c)
 			else
 			{
 				map[h][l] = 0;
-				//init_dir(cub, map_c[h][l]);
+				init_dir(cub, map_c[h][l]);
 				cub->s.posx = (h + 0.5);
 				cub->s.posy = (l + 0.5);
 			}
