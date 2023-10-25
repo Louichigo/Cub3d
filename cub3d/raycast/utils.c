@@ -6,14 +6,19 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:39:41 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/25 13:06:00 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:22:13 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int	ft_exit(void)
+int	ft_exit(t_cub *cub)
 {
+	(void)cub;
+	/*free(cub->s.no_wall);
+	free(cub->s.we_wall);
+	free(cub->s.ea_wall);
+	free(cub->s.so_wall);*/
 	exit(1);
 }
 

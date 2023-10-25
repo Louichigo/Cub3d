@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/25 12:48:25 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:19:53 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ typedef struct s_cub {
 int				ft_kpress(int key, t_cub *cub);
 int				ft_krelease(int key, t_cub *cub);
 int				ft_error(char *str);
-int				ft_exit(void);
+int				ft_exit(t_cub *cub);
 int				ft_refresh(t_cub *cub);
 int				ft_moove(t_cub *cub);
 int				turnright(t_cub *cub);

@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:34:09 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 12:14:15 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/25 13:20:12 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_kpress(int key, t_cub *cub)
 {
 	if (key == ESC)
-		ft_exit();
+		ft_exit(cub);
 	else if (key == W)
 		cub->s.w = 1;
 	else if (key == S)

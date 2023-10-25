@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:08:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/23 20:19:10 by cgross           ###   ########.fr       */
+/*   Updated: 2023/10/25 15:33:00 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,10 +130,8 @@ unsigned int	string_to_rgb(char **copy, char flag)
 		ft_error("rgb error in map");
 	i = -1;
 	while (color[++i])
-	{
 		rgb[i] = ft_atoi(color[i]);
-		free(color[i]);
-	}
+	free_chartab(color);
 	hexa_rgb = 0;
 	hexa_rgb = (rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
 	return (hexa_rgb);
