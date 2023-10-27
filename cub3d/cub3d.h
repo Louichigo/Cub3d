@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 18:47:02 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 20:18:42 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define PI 3.1415926535
-# define MINIMAPSIZE 20
+# define MINIMAPSIZE 25
 # define RADIUS 10
 
 enum {
