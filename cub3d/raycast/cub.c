@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:43:30 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/25 13:07:39 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:32:27 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	ft_refresh(t_cub *cub)
 			&cub->s.line_length, &cub->s.endian);
 	mlx_mouse_hide();
 	cub3(cub);
+	minimap(cub);
+	mlx_put_image_to_window(cub->s.mlx, cub->s.mlx_win, cub->s.img, 0, 0);
 	return (0);
 }
 
@@ -50,5 +52,4 @@ void	cub3(t_cub *cub)
 		textures(cub, cub->s.x);
 		cub->s.x++;
 	}
-	mlx_put_image_to_window(cub->s.mlx, cub->s.mlx_win, cub->s.img, 0, 0);
 }

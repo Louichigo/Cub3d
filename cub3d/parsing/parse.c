@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:03:12 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 11:12:54 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:47:45 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	parsing(t_cub *cub, char **copy)
 	}*/
 	initcub(cub);
 	get_text(cub);
-	cub3(cub);
+	ft_refresh(cub);
 }
 
 void	init_pos(t_cub *cub, int h, int l)

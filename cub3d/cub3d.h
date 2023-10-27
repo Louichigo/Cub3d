@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 11:09:09 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:47:02 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,18 @@
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define PI 3.1415926535
+# define MINIMAPSIZE 20
+# define RADIUS 10
 
 enum {
 	ON_DESTROY = 17
 };
+
+typedef struct s_mapv
+{
+	double	x;
+	double	y;
+}				t_mapv;
 
 typedef struct s_data {
 	char	**mapl;
@@ -47,7 +55,6 @@ typedef struct s_data {
 	int		*addr2;
 	int		jsp;
 	int		spawncount;
-	int		**map;
 	int		map_h;
 	int		map_l;
 	int		bits_per_pixel;
@@ -110,7 +117,7 @@ typedef struct s_text {
 typedef struct s_cub {
 	t_data	s;
 	t_text	tex;
-
+	
 }	t_cub;
 
 //game
@@ -135,6 +142,7 @@ void			draw_walls(t_cub *cub);
 void			get_text(t_cub *cub);
 void			get_text_addr(t_cub *cub);
 void			textures(t_cub *cub, int x);
+void			minimap(t_cub *cub);
 
 size_t			ft_strlen(const char *s);
 
