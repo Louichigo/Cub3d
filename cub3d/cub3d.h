@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/26 17:37:17 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:20:43 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_data {
 	void	*addr;
 	int		*addr2;
 	int		jsp;
+	int		spawncount;
 	int		**map;
 	int		map_h;
 	int		map_l;

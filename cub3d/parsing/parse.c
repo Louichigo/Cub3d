@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:03:12 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/26 18:49:30 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:21:03 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	parsing(t_cub *cub, char **copy)
 {
+	cub->s.spawncount = 0;
 	cub->s.planex = 0;
 	cub->s.planey = 0;
 	cub->s.roof_color = string_to_rgb(copy, 'C');

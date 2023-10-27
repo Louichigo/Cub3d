@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 10:15:47 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:33:25 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,18 @@ char	*check_spawn(t_cub *cub, char *s, int h)
 		if (s[i] != '1' && s[i] != '0' && (s[i] == 'N'
 				|| s[i] == 'S' || s[i] == 'E' || s[i] == 'W'))
 		{
+			cub->s.spawncount += 1;
+			if (cub->s.spawncount > 1)
+				ft_error("Error\nMultiple spawns");
 			init_dir(cub, s[i]);
 			s[i] = '0';
 			cub->s.posx = (h + 0.5);
 			cub->s.posy = (i + 0.5);
+		}
+		else if (s[i] != '1' && s[i] != '0' && s[i] != ' ')
+		{
+			printf("Error in map\n%c is not a valid charcater\n", s[i]);
+			ft_error("");
 		}
 	}
 	return (s);
