@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:33:17 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 20:05:23 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:28:20 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	find_texture(t_cub *cub)
 
 void	init_textures(t_cub *cub)
 {
-	cub->s.texnum = cub->s.map[cub->s.mapx][cub->s.mapy] - 1;
+	cub->s.texnum = cub->s.mapl[cub->s.mapx][cub->s.mapy] - 1;
 	if (cub->s.hitside == 0)
 		cub->s.wallx = cub->s.posy + cub->s.walldist * cub->s.raydiry;
 	else

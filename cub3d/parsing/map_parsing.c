@@ -6,66 +6,50 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/25 13:15:11 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:15:47 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-char	**map_copy(char **copy)
+char	**map_copy(t_cub *cub, char **copy)
 {
 	char	**map;
-	int		largeur;
-	int		hauteur;
 	int		start;
 	int		h;
 
-	hauteur = hauteur_map(copy);
-	largeur = largeur_map(copy);
 	start = map_first_line(copy);
-	map = (char **)malloc(sizeof(int *) * hauteur);
+	map = (char **)malloc(sizeof(char *) * cub->s.map_h + 1);
 	if (!map)
 		return (NULL);
-	h = -1;
-	while (++h < hauteur)
+	h = 0;
+	while (h < cub->s.map_h)
 	{
-		map[h] = ft_strdup(copy[start + h], largeur);
-		printf("[%p]\n", map[h]);
+		map[h] = ft_strdup(copy[start + h], cub->s.map_l);
+		map[h] = check_spawn(cub, map[h], h);
+		h++;
 	}
+	map[h] = NULL;
 	return (map);
 }
 
-int	**map_init(t_cub *cub, char **map_c)
+char	*check_spawn(t_cub *cub, char *s, int h)
 {
-	int	h;
-	int	l;
-	int	**map;
+	int	i;
 
-	map = (int **)malloc(sizeof(int *) * cub->s.map_h);
-	if (!map)
-		return (NULL);
-	h = -1;
-	while (++h < cub->s.map_h)
+	i = -1;
+	while (s[++i])
 	{
-		l = -1;
-		map[h] = (int *)malloc(sizeof(int *) * cub->s.map_l);
-		while (++l < cub->s.map_l && map_c[h][l] != '\n')
+		if (s[i] != '1' && s[i] != '0' && (s[i] == 'N'
+				|| s[i] == 'S' || s[i] == 'E' || s[i] == 'W'))
 		{
-			if (map_c[h][l] == '1')
-				map[h][l] = 1;
-			else if (map_c[h][l] == '0')
-				map[h][l] = 0;
-			else
-			{
-				map[h][l] = 0;
-				init_dir(cub, map_c[h][l]);
-				cub->s.posx = (h + 0.5);
-				cub->s.posy = (l + 0.5);
-			}
+			init_dir(cub, s[i]);
+			s[i] = '0';
+			cub->s.posx = (h + 0.5);
+			cub->s.posy = (i + 0.5);
 		}
-		free(map_c[h]);
 	}
-	return (map);
+	return (s);
 }
 
 int	hauteur_map(char **copy)
@@ -99,7 +83,7 @@ int	map_first_line(char **copy)
 				return (i);
 		}
 	}
-	printf("Error\nno map found\n");
+	printf("Error\nno map found!\n");
 	return (-1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/25 13:19:53 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:37:17 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ enum {
 };
 
 typedef struct s_data {
+	char	**mapl;
 	void	*mlx;
 	void	*mlx_win;
 	void	*img;
@@ -150,8 +151,8 @@ int				space_counter(char *str);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			**ft_split(char const *s, char c);
 unsigned int	string_to_rgb(char **copy, char flag);
-char			**map_copy(char **copy);
-int				**map_init(t_cub *cub, char **map_c);
+char			**map_copy(t_cub *cub, char **copy);
+char			*check_spawn(t_cub *cub, char *s, int h);
 int				hauteur_map(char **copy);
 int				map_first_line(char **copy);
 int				largeur_map(char **copy);

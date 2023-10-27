@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:11:38 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/25 13:13:58 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 10:11:39 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,23 +70,19 @@ char	*ft_strdup(char *s1, int max_len)
 	char	*dup;
 
 	len = ft_strlen(s1);
-	dup = malloc(sizeof(char) * max_len);
+	dup = malloc(sizeof(char) * max_len + 1);
 	if (!dup)
 		return (NULL);
 	i = 0;
-	while (i < max_len)
+	while (s1[i] == ' ')
+		dup[i++] = ' ';
+	while (i < len && s1[i] != '\n' && s1[i] && i < max_len)
 	{
-		while (i < len && s1[i] != '\n' && s1[i])
-		{
-			if (s1[i] == ' ')
-				dup[i] = '0';
-			else
-				dup[i] = s1[i];
-			i++;
-		}
-		dup[i] = '0';
+		dup[i] = s1[i];
 		i++;
 	}
+	while (i < max_len)
+		dup[i++] = ' ';
 	dup[i] = '\0';
 	return (dup);
 }

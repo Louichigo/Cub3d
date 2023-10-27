@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:55:27 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 20:04:00 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:59:28 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	dda_and_height(t_cub *cub)
 			cub->s.mapy += cub->s.stepy;
 			cub->s.hitside = 1;
 		}
-		if (cub->s.map[cub->s.mapx][cub->s.mapy] > 0)
+		if (cub->s.mapl[cub->s.mapx][cub->s.mapy] == '1')
 			cub->s.hit = 1;
 	}
 	if (cub->s.hitside == 0)

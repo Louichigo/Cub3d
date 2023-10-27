@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moove.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 13:52:50 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/21 18:42:59 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:00:50 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,20 @@ int	moovews(t_cub *cub)
 {
 	if (cub->s.w == 1)
 	{
-		if (cub->s.map[(int)(cub->s.posx + cub->s.dirx
-				* cub->s.movespeed)][(int)(cub->s.posy)] == 0)
+		if (cub->s.mapl[(int)(cub->s.posx + cub->s.dirx
+				* cub->s.movespeed)][(int)(cub->s.posy)] == '0')
 			cub->s.posx += cub->s.dirx * cub->s.movespeed;
-		if (cub->s.map[(int)(cub->s.posx)][(int)(cub->s.posy + cub->s.diry
-				* cub->s.movespeed)] == 0)
+		if (cub->s.mapl[(int)(cub->s.posx)][(int)(cub->s.posy + cub->s.diry
+				* cub->s.movespeed)] == '0')
 			cub->s.posy += cub->s.diry * cub->s.movespeed;
 	}
 	if (cub->s.s == 1)
 	{
-		if (cub->s.map[(int)(cub->s.posx - cub->s.dirx
-				* cub->s.movespeed)][(int)(cub->s.posy)] == 0)
+		if (cub->s.mapl[(int)(cub->s.posx - cub->s.dirx
+				* cub->s.movespeed)][(int)(cub->s.posy)] == '0')
 			cub->s.posx -= cub->s.dirx * cub->s.movespeed;
-		if (cub->s.map[(int)(cub->s.posx)][(int)(cub->s.posy - cub->s.diry
-				* cub->s.movespeed)] == 0)
+		if (cub->s.mapl[(int)(cub->s.posx)][(int)(cub->s.posy - cub->s.diry
+				* cub->s.movespeed)] == '0')
 			cub->s.posy -= cub->s.diry * cub->s.movespeed;
 	}
 	return (0);
@@ -52,20 +52,20 @@ int	moovead(t_cub *cub)
 {
 	if (cub->s.d == 1)
 	{
-		if (cub->s.map[(int)(cub->s.posx + cub->s.planex
-				* cub->s.movespeed)][(int)(cub->s.posy)] == 0)
+		if (cub->s.mapl[(int)(cub->s.posx + cub->s.planex
+				* cub->s.movespeed)][(int)(cub->s.posy)] == '0')
 			cub->s.posx += cub->s.planex * cub->s.movespeed;
-		if (cub->s.map[(int)(cub->s.posx)][(int)(cub->s.posy + cub->s.planey
-				* cub->s.movespeed)] == 0)
+		if (cub->s.mapl[(int)(cub->s.posx)][(int)(cub->s.posy + cub->s.planey
+				* cub->s.movespeed)] == '0')
 			cub->s.posy += cub->s.planey * cub->s.movespeed;
 	}
 	if (cub->s.a == 1)
 	{
-		if (cub->s.map[(int)(cub->s.posx - cub->s.planex
-				* cub->s.movespeed)][(int)(cub->s.posy)] == 0)
+		if (cub->s.mapl[(int)(cub->s.posx - cub->s.planex
+				* cub->s.movespeed)][(int)(cub->s.posy)] == '0')
 			cub->s.posx -= cub->s.planex * cub->s.movespeed;
-		if (cub->s.map[(int)(cub->s.posx)][(int)(cub->s.posy - cub->s.planey
-				* cub->s.movespeed)] == 0)
+		if (cub->s.mapl[(int)(cub->s.posx)][(int)(cub->s.posy - cub->s.planey
+				* cub->s.movespeed)] == '0')
 			cub->s.posy -= cub->s.planey * cub->s.movespeed;
 	}
 	return (0);

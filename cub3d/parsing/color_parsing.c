@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:08:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/25 15:33:00 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:36:09 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*space_remover(char *str)
 
 	i = 0;
 	j = 0;
-	trimmed = malloc(sizeof(char) * (ft_strlen(str) - space_counter(str)));
+	trimmed = malloc(sizeof(char) * (ft_strlen(str) - space_counter(str) + 1));
 	if (!trimmed)
 		exit(-1);
 	while (str[i])

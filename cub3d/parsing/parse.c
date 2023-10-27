@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:03:12 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/25 13:27:16 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:49:30 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	parsing(t_cub *cub, char **copy)
 {
-	char	**mapl;
-
 	cub->s.planex = 0;
 	cub->s.planey = 0;
 	cub->s.roof_color = string_to_rgb(copy, 'C');
@@ -26,11 +24,15 @@ void	parsing(t_cub *cub, char **copy)
 	cub->s.ea_wall = textures_path(copy, "EA");
 	cub->s.map_h = hauteur_map(copy);
 	cub->s.map_l = largeur_map(copy);
-	mapl = map_copy(copy);
-	cub->s.map = map_init(cub, mapl);
+	cub->s.mapl = map_copy(cub, copy);
+	free_chartab(copy);
+	int i = 0;
+	while (cub->s.mapl[i])
+	{
+		printf("%s\n", cub->s.mapl[i]);
+		i++;
+	}
 	initcub(cub);
 	get_text(cub);
 	cub3(cub);
-//	free_chartab(copy);
-	//free_chartab(mapl);
 }
