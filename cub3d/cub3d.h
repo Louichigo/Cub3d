@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 10:20:43 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:09:09 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ typedef struct s_cub {
 
 }	t_cub;
 
+//game
 int				ft_kpress(int key, t_cub *cub);
 int				ft_krelease(int key, t_cub *cub);
 int				ft_error(char *str);
@@ -158,9 +159,11 @@ int				hauteur_map(char **copy);
 int				map_first_line(char **copy);
 int				largeur_map(char **copy);
 char			*ft_strdup(char *s1, int max_len);
-void			init_dir(t_cub *cub, char c);
+void			init_dir(t_cub *cub, char c, int h, int l);
+void			init_pos(t_cub *cub, int h, int l);
 void			free_chartab(char **tab);
-void			free_mapint(t_data *s, int **map);
 int				tab_size(char **tab);
+void			free_tex(t_cub *cub);
+void			free_chelou(t_cub *cub, char **map);
 
 #endif

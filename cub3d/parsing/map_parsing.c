@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 10:33:25 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:10:03 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,16 @@ char	**map_copy(t_cub *cub, char **copy)
 	{
 		map[h] = ft_strdup(copy[start + h], cub->s.map_l);
 		map[h] = check_spawn(cub, map[h], h);
+		if (map[h] == NULL)
+			free_chelou(cub, map);
 		h++;
 	}
 	map[h] = NULL;
+	if (cub->s.spawncount == 0)
+	{
+		free_chelou(cub, map);
+		ft_error("Error\nNo spawn point define in map");
+	}
 	return (map);
 }
 
@@ -45,16 +52,17 @@ char	*check_spawn(t_cub *cub, char *s, int h)
 		{
 			cub->s.spawncount += 1;
 			if (cub->s.spawncount > 1)
-				ft_error("Error\nMultiple spawns");
-			init_dir(cub, s[i]);
+			{
+				printf("Error in map\nMultiple spawn points\n");
+				return (NULL);
+			}
+			init_dir(cub, s[i], h, i);
 			s[i] = '0';
-			cub->s.posx = (h + 0.5);
-			cub->s.posy = (i + 0.5);
 		}
 		else if (s[i] != '1' && s[i] != '0' && s[i] != ' ')
 		{
-			printf("Error in map\n%c is not a valid charcater\n", s[i]);
-			ft_error("");
+			printf("Error in map\n%c is not a valid charcater", s[i]);
+			return (NULL);
 		}
 	}
 	return (s);
@@ -91,7 +99,7 @@ int	map_first_line(char **copy)
 				return (i);
 		}
 	}
-	printf("Error\nno map found!\n");
+	ft_error("Error\nno map found!\n");
 	return (-1);
 }
 

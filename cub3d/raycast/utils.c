@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:39:41 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 10:18:26 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:00:10 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@ int	ft_exit(t_cub *cub)
 {
 	(void)cub;
 	free_chartab(cub->s.mapl);
-	free(cub->s.no_wall);
-	free(cub->s.we_wall);
-	free(cub->s.ea_wall);
-	free(cub->s.so_wall);
+	free_tex(cub);
 	exit(1);
 }
 
 int	ft_error(char *str)
 {
-	printf("%s\n", str);
+		printf("%s", str);
 	exit(1);
 }
 

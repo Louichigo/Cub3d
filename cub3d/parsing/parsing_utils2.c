@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:11:38 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 10:11:39 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:07:09 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,9 @@ char	*ft_strdup(char *s1, int max_len)
 	return (dup);
 }
 
-void	init_dir(t_cub *cub, char c)
+void	init_dir(t_cub *cub, char c, int h, int l)
 {
+	init_pos(cub, h, l);
 	if (c == 'N')
 	{
 		cub->s.dirx = -1;
