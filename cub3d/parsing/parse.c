@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:03:12 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 15:47:45 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:33:20 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ void	parsing(t_cub *cub, char **copy)
 	cub->s.map_l = largeur_map(copy);
 	cub->s.mapl = map_copy(cub, copy);
 	free_chartab(copy);
+	if (!is_map_closed(cub->s.mapl))
+	{
+		free_chartab(cub->s.mapl);
+		exit(-1);
+	}
 	/*int i = 0;
 	while (cub->s.mapl[i])
 	{

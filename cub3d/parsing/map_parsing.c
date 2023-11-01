@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 11:10:03 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:28:29 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,36 @@ char	*check_spawn(t_cub *cub, char *s, int h)
 		}
 	}
 	return (s);
+}
+
+bool	is_map_closed(char **map)
+{
+	t_data 		p;
+	char		cell;
+
+	p.l2 = -1;
+	while (map[++p.l2] != NULL)
+	{
+		p.h2 = -1;
+		while (map[p.l2][++p.h2] != '\0')
+		{
+			cell = map[p.l2][p.h2];
+			if (cell == '0' || cell == 'N' || cell == 'S' || cell == 'E'
+				|| cell == 'W')
+			{
+				if (p.l2 == 0 || p.h2 == 0 || map[p.l2][p.h2 + 1] == '\0' ||
+					map[p.l2 + 1] == NULL || map[p.l2][p.h2 + 1] == ' ' ||
+					map[p.l2 + 1][p.h2] == ' ' || map[p.l2][p.h2 - 1] == ' ' ||
+					map[p.l2 - 1][p.h2] == ' ')
+				{
+					printf("Error, map is not closed \
+(at %d, %d)\n", p.h2 + 1, p.l2 + 1);
+					return (false);
+				}
+			}
+		}
+	}
+	return (true);
 }
 
 int	hauteur_map(char **copy)

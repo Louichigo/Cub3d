@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 20:18:42 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:28:50 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct s_data {
 	void	*mlx_win;
 	void	*img;
 	void	*addr;
+	int		h2;
+	int		l2;
 	int		*addr2;
 	int		jsp;
 	int		spawncount;
@@ -173,5 +175,6 @@ void			free_chartab(char **tab);
 int				tab_size(char **tab);
 void			free_tex(t_cub *cub);
 void			free_chelou(t_cub *cub, char **map);
+bool			is_map_closed(char **map);
 
 #endif
