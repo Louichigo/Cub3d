@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/01 14:28:29 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/01 14:48:41 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,59 +96,4 @@ bool	is_map_closed(char **map)
 		}
 	}
 	return (true);
-}
-
-int	hauteur_map(char **copy)
-{
-	int	start;
-	int	end;
-
-	start = map_first_line(copy);
-	if (start < 6)
-		return (-1);
-	end = 0;
-	while (copy[start++])
-		end++;
-	return (end);
-}
-
-int	map_first_line(char **copy)
-{
-	int	i;
-	int	j;
-
-	i = 5;
-	while (copy[++i])
-	{
-		j = -1;
-		while (copy[i][++j])
-		{
-			while (is_space(copy[i][j]))
-				j++;
-			if (copy[i][j] == '1')
-				return (i);
-		}
-	}
-	ft_error("Error\nno map found!\n");
-	return (-1);
-}
-
-int	largeur_map(char **copy)
-{
-	int	max_len;
-	int	start;
-	int	j;
-
-	start = map_first_line(copy) - 1;
-	if (start < 0)
-		return (-1);
-	max_len = 0;
-	while (copy[++start])
-	{
-		j = -1;
-		while (copy[start][++j])
-			if (max_len < j)
-				max_len = j;
-	}
-	return (max_len);
 }
