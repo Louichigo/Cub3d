@@ -2,6 +2,8 @@ NO ./textures/NO.xpm
 SO ./textures/SO.xpm
 WE ./textures/WE.xpm
 EA ./textures/EA.xpm
+
+
 F 0, 255  , 0
 C 0,  0, 255
        11111111111111111111111111

@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:08:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/02 09:22:03 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/02 10:16:14 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ unsigned int	string_to_rgb(t_cub *cub, char **copy, char flag)
 	cub->color_string = color_strings(copy, flag);
 	if (cub->color_string == NULL)
 	{
-		printf("error: color settings for %c not found\n", flag);
+		printf("Error\ncolor settings for %c not found\n", flag);
 		exit(-1);
 	}
 	cub->color_cleanstring = space_remover(cub->color_string);

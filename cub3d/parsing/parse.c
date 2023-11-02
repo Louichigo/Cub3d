@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:03:12 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/02 09:41:27 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/02 10:01:54 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ void	parsing(t_cub *cub, char **copy)
 	cub->s.planey = 0;
 	cub->s.roof_color = string_to_rgb(cub, copy, 'C');
 	cub->s.floor_color = string_to_rgb(cub, copy, 'F');
-/*	cub->s.no_wall = textures_path(copy, "NO");
-	cub->s.so_wall = textures_path(copy, "SO");
-	cub->s.we_wall = textures_path(copy, "WE");
-	cub->s.ea_wall = textures_path(copy, "EA");
-	*/
 	set_textures(cub, copy);
 	cub->s.map_h = hauteur_map(copy);
 	cub->s.map_l = largeur_map(copy);
