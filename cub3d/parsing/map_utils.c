@@ -6,7 +6,7 @@
 /*   By: cgross <cgross@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:47:49 by cgross            #+#    #+#             */
-/*   Updated: 2023/11/01 14:48:17 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/02 09:07:54 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ int	hauteur_map(char **copy)
 
 	start = map_first_line(copy);
 	if (start < 6)
-		return (-1);
+	{
+		printf("not enough args in .cub file\n");
+		free_chartab(copy);
+		exit(-1);
+	}
 	end = 0;
 	while (copy[start++])
 		end++;

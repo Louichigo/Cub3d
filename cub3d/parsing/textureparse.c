@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:15:02 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/26 18:44:06 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/02 09:38:34 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,30 @@ char	*textures_path(char **copy, char *flag)
 	return (NULL);
 }
 
-bool	valid_texture(char *path)
+char	*valid_texture(char **copy, char *flag)
 {
-	int	fd;
+	int		fd;
+	char	*path;
 
+	path = textures_path(copy, flag);
+	if (path == NULL)
+	{
+		printf("Error\ncould not find texture path for %s\n", flag);
+		exit(-1);
+	}
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
 	{
-		printf("Error\ncould not open texture file");
-		return (false);
+		printf("Error\ncould not open texture file for %s", flag);
+		exit(-1);
 	}
-	return (true);
+	return (path);
+}
+
+void	set_textures(t_cub *cub, char **copy)
+{
+	cub->s.no_wall = valid_texture(copy, "NO");
+	cub->s.so_wall = valid_texture(copy, "SO");
+	cub->s.ea_wall = valid_texture(copy, "EA");
+	cub->s.we_wall = valid_texture(copy, "WE");
 }

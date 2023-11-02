@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:08:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/26 18:36:09 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/02 09:22:03 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,29 +110,29 @@ char	*color_strings(char **copy, char c)
 	return (NULL);
 }
 
-unsigned int	string_to_rgb(char **copy, char flag)
+unsigned int	string_to_rgb(t_cub *cub, char **copy, char flag)
 {
-	char			*color_string;
-	char			*cleanstring;
-	char			**color;
-	int				rgb[3];
-	unsigned int	hexa_rgb;
 	int				i;
 
-	color_string = color_strings(copy, flag);
-	cleanstring = space_remover(color_string);
-	free(color_string);
-	if (!virgule_check(cleanstring))
+	cub->color_string = color_strings(copy, flag);
+	if (cub->color_string == NULL)
+	{
+		printf("error: color settings for %c not found\n", flag);
+		exit(-1);
+	}
+	cub->color_cleanstring = space_remover(cub->color_string);
+	free(cub->color_string);
+	if (!virgule_check(cub->color_cleanstring))
 		ft_error("rgb error in map");
-	color = ft_split(cleanstring, ',');
-	free(cleanstring);
-	if (!valid_value(color))
+	cub->color = ft_split(cub->color_cleanstring, ',');
+	free(cub->color_cleanstring);
+	if (!valid_value(cub->color))
 		ft_error("rgb error in map");
 	i = -1;
-	while (color[++i])
-		rgb[i] = ft_atoi(color[i]);
-	free_chartab(color);
-	hexa_rgb = 0;
-	hexa_rgb = (rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
-	return (hexa_rgb);
+	while (cub->color[++i])
+		cub->rgb[i] = ft_atoi(cub->color[i]);
+	free_chartab(cub->color);
+	cub->hexa_rgb = 0;
+	cub->hexa_rgb = (cub->rgb[0] << 16 | cub->rgb[1] << 8 | cub->rgb[2]);
+	return (cub->hexa_rgb);
 }

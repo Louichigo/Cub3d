@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/01 14:28:50 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/02 09:43:02 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,13 @@ typedef struct s_text {
 }	t_text;
 
 typedef struct s_cub {
-	t_data	s;
-	t_text	tex;
+	t_data			s;
+	t_text			tex;
+	char			**color;
+	char			*color_string;
+	char			*color_cleanstring;
+	int				rgb[3];
+	unsigned int	hexa_rgb;
 	
 }	t_cub;
 
@@ -153,7 +158,6 @@ char			**copy_fd(int argc, char **argv);
 char			*gnl_custom(int fd);
 int				ft_strcmp(char *s1, char *s2);
 char			*textures_path(char **copy, char *flag);
-bool			valid_texture(char *path);
 bool			is_space(char c);
 void			parsing(t_cub *cub, char **copy);
 int				ft_atoi(const char *str);
@@ -162,7 +166,7 @@ bool			is_rgb(int rgb);
 int				space_counter(char *str);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			**ft_split(char const *s, char c);
-unsigned int	string_to_rgb(char **copy, char flag);
+unsigned int	string_to_rgb(t_cub *cub, char **copy, char flag);
 char			**map_copy(t_cub *cub, char **copy);
 char			*check_spawn(t_cub *cub, char *s, int h);
 int				hauteur_map(char **copy);
@@ -176,5 +180,7 @@ int				tab_size(char **tab);
 void			free_tex(t_cub *cub);
 void			free_chelou(t_cub *cub, char **map);
 bool			is_map_closed(char **map);
+char			*valid_texture(char **copy, char *flag);
+void			set_textures(t_cub *cub, char **copy);
 
 #endif

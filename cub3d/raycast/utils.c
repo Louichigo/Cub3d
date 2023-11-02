@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:39:41 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 11:00:10 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:39:52 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_exit(t_cub *cub)
 
 int	ft_error(char *str)
 {
-		printf("%s", str);
+	printf("%s", str);
 	exit(1);
 }
 

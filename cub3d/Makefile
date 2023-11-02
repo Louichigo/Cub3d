@@ -6,11 +6,11 @@
 #    By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 14:23:07 by lobertho          #+#    #+#              #
-#    Updated: 2023/10/26 18:53:56 by lobertho         ###   ########.fr        #
+#    Updated: 2023/11/02 08:00:13 by cgross           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = cub3d
+NAME = cub3D
 
 SRCS = $(wildcard *.c)	\
 	   $(wildcard raycast/*.c) \
