@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/02 09:43:02 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/03 13:53:43 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@
 # define D 2
 # define LEFT 123
 # define RIGHT 124
-# define LARGEUR 1920
-# define HAUTEUR 1080
+# define LARGEUR 1080
+# define HAUTEUR 720
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define PI 3.1415926535
-# define MINIMAPSIZE 25
+# define MINIMAPSIZE 10
 # define RADIUS 10
 
 enum {

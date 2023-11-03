@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 16:08:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/02 11:18:20 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/03 13:46:38 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ unsigned int	string_to_rgb(t_cub *cub, char **copy, char flag)
 	if (cub->color_string == NULL)
 	{
 		printf("Error\ncolor settings for %c not found\n", flag);
-		free(cub->color_string)
+		free(cub->color_string);
 		exit(-1);
 	}
 	cub->color_cleanstring = space_remover(cub->color_string);

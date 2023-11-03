@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cgross <cgross@student.42lausanne.ch>      +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:47:49 by cgross            #+#    #+#             */
-/*   Updated: 2023/11/02 10:13:59 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/03 13:47:05 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int	hauteur_map(char **copy)
 {

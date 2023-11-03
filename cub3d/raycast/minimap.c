@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:33:09 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/27 20:13:23 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/03 14:12:47 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	minimap(t_cub *cub)
 				drawmap(cub, start, MINIMAPSIZE, 0x00000000);
 			if (mapchr("0", cub->s.mapl[y][x]))
 				drawmap(cub, start, MINIMAPSIZE, 0x00EEEEE4);
+			if (cub->s.posy > x && cub->s.posx > y && cub->s.posy < x + 1 && cub->s.posx < y + 1)
+				drawmap(cub, start, MINIMAPSIZE, 0x00FF0000);
 			x++;
 		}
 		y++;
