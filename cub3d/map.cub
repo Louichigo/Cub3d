@@ -1,7 +1,7 @@
 NO ./textures/mc.xpm
 SO ./textures/picasso.xpm
-WE ./textures/WE.xpm
-EA ./textures/EA.xpm
+WE ./textures/vangogh.xpm
+EA ./textures/magritte.xpm
 
 
 F 0, 255  , 0
