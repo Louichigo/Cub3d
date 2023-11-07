@@ -6,7 +6,7 @@
 #    By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/06 14:23:07 by lobertho          #+#    #+#              #
-#    Updated: 2023/11/02 08:00:13 by cgross           ###   ########.fr        #
+#    Updated: 2023/11/07 15:15:31 by lobertho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS = $(wildcard *.c)	\
 
 OBJS = $(SRCS:.c=.o)
 
-CC = gcc -Wall -Wextra -Werror
+CC = gcc -Wall -Wextra -Werror -fsanitize=address
 
 FLAGS = -framework OpenGL -framework AppKit
 

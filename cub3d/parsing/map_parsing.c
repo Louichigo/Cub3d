@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/07 12:47:28 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/07 15:06:43 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**map_copy(t_cub *cub, char **copy)
 	int		h;
 
 	start = map_first_line(copy);
-	map = (char **)malloc(sizeof(char *) * cub->s.map_h + 1);
+	map = (char **)malloc(sizeof(char *) * cub->s.map_l + 1);
 	if (!map)
 		return (NULL);
 	h = 0;
