@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:43:30 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/07 15:22:55 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:43:01 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	ft_refresh(t_cub *cub)
 	ft_moove(cub);
 	cub->s.img = mlx_new_image(cub->s.mlx, LARGEUR, HAUTEUR);
 	cub->s.addr = mlx_get_data_addr(cub->s.img, &cub->s.bits_per_pixel,
+			&cub->s.line_length, &cub->s.endian);
+	cub->s.addr2 = (int *)mlx_get_data_addr(cub->s.img, &cub->s.bits_per_pixel,
 			&cub->s.line_length, &cub->s.endian);
 	mlx_mouse_hide();
 	cub3(cub);
