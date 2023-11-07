@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:46:46 by lobertho          #+#    #+#             */
-/*   Updated: 2023/10/20 14:00:44 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:38:59 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	open_fd(int argc, char **argv)
 	if (fd < 0)
 	{
 		printf("Error\ncould not open .cub file");
-		return (-1);
+		exit(-1);
 	}
 	return (fd);
 }
@@ -77,8 +77,6 @@ char	**copy_fd(int argc, char **argv)
 	char	*line;
 
 	fd = open_fd(argc, argv);
-	if (fd < 0)
-		exit(-1);
 	file_size = fd_size(argc, argv);
 	copy = (char **) malloc(sizeof(char *) * (file_size + 1));
 	if (copy == NULL)

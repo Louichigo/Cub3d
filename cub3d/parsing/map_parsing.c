@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 17:54:28 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/02 10:14:55 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/07 11:21:32 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ char	*check_spawn(t_cub *cub, char *s, int h)
 
 bool	is_map_closed(char **map)
 {
-	t_data 		p;
-	char		cell;
+	t_data	p;
+	char	cell;
 
 	p.l2 = -1;
 	while (map[++p.l2] != NULL)

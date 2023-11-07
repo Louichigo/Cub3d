@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:03:12 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/02 10:01:54 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/07 11:21:54 by cgross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ void	parsing(t_cub *cub, char **copy)
 		free_chartab(cub->s.mapl);
 		exit(-1);
 	}
-	/*int i = 0;
-	while (cub->s.mapl[i])
-	{
-		printf("%s\n", cub->s.mapl[i]);
-		i++;
-	}*/
 	initcub(cub);
 	get_text(cub);
 	ft_refresh(cub);

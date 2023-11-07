@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/03 13:53:43 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:46:33 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,12 @@
 # define D 2
 # define LEFT 123
 # define RIGHT 124
-# define LARGEUR 1080
-# define HAUTEUR 720
+# define LARGEUR 1400
+# define HAUTEUR 1050
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define PI 3.1415926535
-# define MINIMAPSIZE 10
-# define RADIUS 10
+# define MINIMAPSIZE 15
 
 enum {
 	ON_DESTROY = 17
@@ -124,7 +123,6 @@ typedef struct s_cub {
 	char			*color_cleanstring;
 	int				rgb[3];
 	unsigned int	hexa_rgb;
-	
 }	t_cub;
 
 //game
