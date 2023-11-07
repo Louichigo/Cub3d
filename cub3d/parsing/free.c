@@ -6,7 +6,7 @@
 /*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 19:31:46 by cgross            #+#    #+#             */
-/*   Updated: 2023/10/27 10:56:32 by lobertho         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:47:14 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	free_chelou(t_cub *cub, char **map)
 {
 	free_chartab(map);
 	free_tex(cub);
-	ft_error("");
 }
 
 void	free_tex(t_cub *cub)
