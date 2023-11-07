@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:33:09 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/07 11:23:59 by cgross           ###   ########.fr       */
+/*   Updated: 2023/11/07 13:39:26 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	drawmap(t_cub *cub, t_mapv start, int len, int color)
 		j = 0;
 		while (j < len)
 		{
-			my_mlx_pixel_put(cub, start.x + i, start.y + j, color);
+			my_mlx_pixel_put(cub, start.y + i, start.x + j, color);
 			j++;
 		}
 		i++;
@@ -60,23 +60,23 @@ void	minimap(t_cub *cub)
 
 	start.x = 0;
 	start.y = 0;
-	y = 0;
-	while (cub->s.mapl[y])
+	x = 0;
+	while (cub->s.mapl[x])
 	{
-		x = 0;
-		while (x < cub->s.mapl[y][x])
+		y = 0;
+		while (x < cub->s.mapl[x][y])
 		{
 			start.x = x * MINIMAPSIZE;
 			start.y = y * MINIMAPSIZE;
-			if (mapchr("1", cub->s.mapl[y][x]))
+			if (mapchr("1", cub->s.mapl[x][y]))
 				drawmap(cub, start, MINIMAPSIZE, 0x00000000);
-			if (mapchr("0", cub->s.mapl[y][x]))
+			if (mapchr("0", cub->s.mapl[x][y]))
 				drawmap(cub, start, MINIMAPSIZE, 0x00EEEEE4);
-			if (cub->s.posy > x && cub->s.posx > y && cub->s.posy < x + 1
-				&& cub->s.posx < y + 1)
+			if (cub->s.posy > y && cub->s.posx > x && cub->s.posy < y + 1
+				&& cub->s.posx < x + 1)
 				drawmap(cub, start, MINIMAPSIZE, 0x00FF0000);
-			x++;
+			y++;
 		}
-		y++;
+		x++;
 	}
 }
