@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   copy_fd.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:46:46 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/07 11:38:59 by cgross           ###   ########.fr       */
+/*   Updated: 2024/09/30 21:26:31 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ bool	check_validarg(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		printf("Error\nusage: ./cub3d '.cub file path'\n");
+		printf("Error: ./cub3d maps/select_a_map.cub\n");
 		return (false);
 	}
 	extension = &argv[1][ft_strlen(argv[1]) - 4];
 	if (ft_strlen(argv[1]) < 4 || ft_strcmp(extension, ".cub") != 0)
 	{
-		printf("Error\nmap filename requires a .cub extension\n");
+		printf("Error: map filename requires a .cub extension\n");
 		return (false);
 	}
 	return (true);
@@ -39,7 +39,7 @@ int	open_fd(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 	{
-		printf("Error\ncould not open .cub file");
+		printf("Error: could not open .cub file");
 		exit(-1);
 	}
 	return (fd);
@@ -76,7 +76,8 @@ char	**copy_fd(int argc, char **argv)
 	char	**copy;
 	char	*line;
 
-	fd = open_fd(argc, argv);
+	if ((fd = open_fd(argc, argv)) == -1)
+		exit(-1);
 	file_size = fd_size(argc, argv);
 	copy = (char **) malloc(sizeof(char *) * (file_size + 1));
 	if (copy == NULL)

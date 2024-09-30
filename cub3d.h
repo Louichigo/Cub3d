@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lobertho <lobertho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lobertho <lobertho@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 14:17:57 by lobertho          #+#    #+#             */
-/*   Updated: 2023/11/07 15:40:28 by lobertho         ###   ########.fr       */
+/*   Updated: 2024/09/30 21:28:30 by lobertho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@
 # define D 2
 # define LEFT 123
 # define RIGHT 124
-# define LARGEUR 1980
-# define HAUTEUR 1440
+# define LARGEUR 1024
+# define HAUTEUR 768
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define PI 3.1415926535
-# define MINIMAPSIZE 20 
+# define MINIMAPSIZE 10 
 
 enum {
 	ON_DESTROY = 17
